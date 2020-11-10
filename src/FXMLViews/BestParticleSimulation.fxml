@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
@@ -12,15 +13,22 @@
 
 <AnchorPane fx:id="rootAnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BestParticleController">
    <children>
-      <AnchorPane fx:id="innerAnchorPane" layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane fx:id="innerAnchorPane" layoutX="14.0" layoutY="66.0" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Sphere fx:id="sphereg" layoutX="21.0" layoutY="100.0" radius="20.0" />
          </children>
       </AnchorPane>
-      <Label fx:id="ltitle" alignment="CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="26.0" prefWidth="600.0" textFill="WHITE">
+      <Label fx:id="ltitle" alignment="CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="26.0" prefWidth="600.0">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
+      <Separator layoutX="14.0" layoutY="283.0" prefHeight="6.0" prefWidth="560.0" />
+      <AnchorPane fx:id="secAnchorPane" layoutX="14.0" layoutY="301.0" prefHeight="85.0" prefWidth="87.0">
+         <children>
+            <Sphere fx:id="sphere3" layoutX="74.0" layoutY="71.0" radius="10.0" />
+            <Sphere fx:id="sphere2" layoutX="11.0" layoutY="14.0" radius="10.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

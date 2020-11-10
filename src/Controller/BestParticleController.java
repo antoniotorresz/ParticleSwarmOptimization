@@ -25,10 +25,10 @@ import java.util.ResourceBundle;
 public class BestParticleController implements Initializable {
 
     @FXML
-    private Sphere sphereg;
+    private Sphere sphereg, sphere2, sphere3;
 
     @FXML
-    private AnchorPane rootAnchorPane, innerAnchorPane;
+    private AnchorPane rootAnchorPane, innerAnchorPane, secAnchorPane;
     @FXML
     private Label ltitle;
 
@@ -36,25 +36,30 @@ public class BestParticleController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         //AnchorPane style
-        this.rootAnchorPane.setStyle("-fx-background-color: #263238");
-        this.innerAnchorPane.setStyle("-fx-background-color: #455A64");
+        //this.rootAnchorPane.setStyle("-fx-background-color: #263238");
+        this.innerAnchorPane.setStyle("-fx-background-color: #CFD8DC");
+        this.secAnchorPane.setStyle("-fx-background-color: #CFD8DC");
+
 
 
         //Adding style to shpere:
-        PhongMaterial material = new PhongMaterial();
-        material.setDiffuseColor(Color.web("#E91E63"));
-        material.setSpecularColor(Color.BLACK);
-        this.sphereg.setMaterial(material);
-        animateSphere();
 
+        this.sphereg.setMaterial(new PhongMaterial(Color.web("#E91E63")));
+        this.sphere2.setMaterial(new PhongMaterial(Color.BLUE));
+        this.sphere3.setMaterial(new PhongMaterial(Color.GREEN));
+
+        animateSphere(this.sphereg, 158, 0,3 );
+        animateSphere(this.sphere2, 60, 60, 1);
+        animateSphere(this.sphere3, -60,-60,  1);
     }
 
-    private void animateSphere() {
+    private void animateSphere(Sphere sphereToAnimate, int xMovement,int yMovement, int secs) {
 
         TranslateTransition transition = new TranslateTransition();
-        transition.setDuration(Duration.seconds(3));
-        transition.setNode(this.sphereg);
-        transition.setToX(158);
+        transition.setDuration(Duration.seconds(secs));
+        transition.setNode(sphereToAnimate);
+        transition.setToX(xMovement);
+        transition.setToY(yMovement);
         transition.setAutoReverse(true);
         transition.setCycleCount(Timeline.INDEFINITE);
         transition.play();
